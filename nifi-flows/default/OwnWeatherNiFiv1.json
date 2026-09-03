@@ -1,0 +1,11 @@
+{
+  "flow" : {
+    "createdTimestamp" : 1788434350675,
+    "description" : "Initial setup of v2.11 evaluation flow",
+    "identifier" : "OwnWeatherNiFiv1",
+    "lastModifiedTimestamp" : 1788434350675,
+    "name" : "Own_Weather_NiFi_v1",
+    "versionCount" : 0
+  },
+  "latest" : false
+}
