@@ -1,0 +1,32 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: own-weather-application
+  datasource:
+    url: ${DATASOURCE_URL:jdbc:postgresql://localhost:5432/Own_Weather}
+    username: ${DATASOURCE_USERNAME:readonly_user}
+    password: ${DATASOURCE_PASSWORD:viewer1}
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      pool-name: WeatherHikariCP
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 300000
+      connection-timeout: 20000
+      read-only: true
+
+vault:
+  enabled: true
+  url: http://127.0.0.1:8200
+  token: f99bd67c-2949-55b0-a736-83ab84dd65bb
+  secret-path: secret/local/Weather/weather.json
+
+logging:
+  level:
+    root: INFO
+    com.ownweather: DEBUG
+    org.springframework.jdbc: INFO
